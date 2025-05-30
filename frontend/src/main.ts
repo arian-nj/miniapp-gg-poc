@@ -1,29 +1,27 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
 import WebApp from '@twa-dev/sdk'
-const message = "Hello World";
-console.log(message.toLowerCase())
+
 WebApp.ready()
 
 fetch("/api/open?" + WebApp.initData)
 
+let full_name = ""
+let username = WebApp.initDataUnsafe.user?.username == undefined ? "no username" : `@${WebApp.initDataUnsafe.user.username}`
+
+if (WebApp.initDataUnsafe.user?.first_name !== undefined) {
+	full_name += WebApp.initDataUnsafe.user?.first_name
+}
+
+if (WebApp.initDataUnsafe.user?.last_name !== undefined) {
+	full_name += WebApp.initDataUnsafe.user?.last_name
+}
+
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript + Bitch</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
+	  <h1>Hello ${full_name}</h1>
+	  <h3>${username}</h3>
+	  <p>Fuck You</p>
   </div>
 `
 

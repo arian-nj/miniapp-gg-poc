@@ -18,4 +18,5 @@ sudo caddy run --config ./Caddyfile
 ```
 
 ### miniapp url
-set miniapp url in bot father setting https://127.0.0.1:3000
+set miniapp url in bot father setting https://127.0.0.1:8443
+change port in Caddyfile if you want
