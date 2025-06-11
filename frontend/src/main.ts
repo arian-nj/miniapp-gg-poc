@@ -13,6 +13,7 @@ if (WebApp.initDataUnsafe.user?.first_name !== undefined) {
 	full_name += WebApp.initDataUnsafe.user?.first_name
 }
 
+
 if (WebApp.initDataUnsafe.user?.last_name !== undefined) {
 	full_name += WebApp.initDataUnsafe.user?.last_name
 }

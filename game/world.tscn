@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bugoom4pidj64"]
+
+[ext_resource type="Texture2D" uid="uid://cu5iorfla6q2i" path="res://icon.svg" id="1_f3sb7"]
+
+[node name="World" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(570, 265)
+texture = ExtResource("1_f3sb7")
